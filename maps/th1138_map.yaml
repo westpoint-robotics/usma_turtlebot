@@ -1,4 +1,4 @@
-image: /home/user1/catkin_ws/src/usma_turtlebot/map/th1138_map.pgm
+image: /home/user1/catkin_ws/src/usma_turtlebot/maps/th1138_map.pgm
 resolution: 0.050000
 origin: [-13.800000, -1.000000, 0.000000]
 negate: 0
