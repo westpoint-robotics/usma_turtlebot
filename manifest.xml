@@ -1,0 +1,16 @@
+<package>
+  <description brief="usma_turtlebot">
+
+     usma_turtlebot
+
+  </description>
+  <author>user1</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/usma_turtlebot</url>
+  <depend package="rospy"/>
+  <depend package="roscpp"/>
+
+</package>
+
+
