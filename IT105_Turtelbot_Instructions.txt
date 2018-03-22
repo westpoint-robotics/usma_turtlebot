@@ -1,0 +1,2 @@
+Open and read the file found in the ros package:
+gedit ~/catkin_ws/src/usma_turtlebot/README.md
