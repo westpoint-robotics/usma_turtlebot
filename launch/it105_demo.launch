@@ -1,5 +1,14 @@
 <!-- IT105 SLAM with Turtlebot -->
 <launch>
+  <machine
+    name="ros11"
+    address="192.168.200.202"
+    user="user1"
+    password="it105rocks"
+    timeout="10"
+    env-loader="/home/user1/catkin_ws/devel/remote_env_loader.sh"
+  />
+
 
     <include file="$(find turtlebot_bringup)/launch/minimal.launch" />
     <include file="$(find turtlebot_navigation)/launch/amcl_demo.launch" />

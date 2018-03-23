@@ -5,7 +5,7 @@ Each computer is labeled with its name, such as ROS03 or ROS12. Each robot uses 
 | :---: | :---: | :---: |
 |  1   |      ROS02     |    ROS03    |
 |  2   |      ROS04     |    ROS07    |
-|  3   |      ROS11     |    ROS12    |
+|  3   |      ROS12     |    ROS11    |
 
 ## Navigate a known map:
 Reference: http://wiki.ros.org/turtlebot_navigation/Tutorials/Autonomously%20navigate%20in%20a%20known%20map
