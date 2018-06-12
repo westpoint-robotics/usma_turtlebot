@@ -1,14 +1,4 @@
-<!-- IT105 SLAM with Turtlebot -->
 <launch>
-
-    <include file="$(find turtlebot_bringup)/launch/minimal.launch" />
-    <include file="$(find turtlebot_navigation)/launch/gmapping_demo.launch" />
-    <!-- <include file="$(find turtlebot_teleop)/launch/xbox360_teleop.launch" />
-    <include file="$(find turtlebot_rviz_launchers)/launch/view_navigation.launch" /> -->
-
-
-<!-- Turtlebot Teleop Xbox launch commands minus the joy node. This is run on the remote machine -->
-
   <!--
     Push the left frontal button labeled as 'LB' to activate cmd_vel publishing.
     Move the left stick around to control the velocity.
@@ -25,8 +15,6 @@
     <remap from="turtlebot_teleop_joystick/cmd_vel" to="teleop_velocity_smoother/raw_cmd_vel"/>
   </node>
 
+  <node pkg="joy" type="joy_node" name="joystick"/>
 
-
-<!-- To save the map:
-rosrun map_server map_saver -f ~/catkin_ws/src/usma_turtlebot/launch/my_map -->
 </launch>
