@@ -3,7 +3,13 @@ import subprocess
 import time
 import rospy
 from std_msgs.msg import String
+from sensor_msgs.msg import Joy
+joy_data=Joy()
 
+def joy_cb(data):
+    global joy_data
+    joy_data=data
+    
 def check_connected_ap():
     cmd =["nmcli -f BSSID,ACTIVE dev wifi list | awk '$2 ~ /yes/ {print $1}'"]
     address = subprocess.Popen(cmd, stdout=subprocess.PIPE, shell=True)
@@ -18,10 +24,13 @@ def check_connected_ap():
 
 if __name__ == "__main__": 
     pub = rospy.Publisher('network_stats', String, queue_size=10)
+    rospy.Subscriber("joy", Joy, joy_cb)
     rospy.init_node('network_monitor', anonymous=True)
     rate = rospy.Rate(10) # 10hz
     while not rospy.is_shutdown():
         msg = check_connected_ap()
+        if (joy_data.buttons[1]==1:
+            msg = msg + ",trouble"
         print(msg)        
         pub.publish(msg)
         rate.sleep()

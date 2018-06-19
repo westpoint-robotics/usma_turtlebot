@@ -9,10 +9,10 @@
 
 
   
-  <param name="/depthimage_to_laserscan/scan_height"  value="100"/>
+    <param name="/depthimage_to_laserscan/scan_height"  value="100"/>
 
 
-
+    <node name="ap_mapping" type="apfinder.py" pkg="usma_turtlebot"/>
 
 <!-- To save the map:
 rosrun map_server map_saver -f ~/catkin_ws/src/usma_turtlebot/launch/my_map -->
