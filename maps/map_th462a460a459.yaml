@@ -1,4 +1,4 @@
-image: /home/rrc/catkin_ws/src/usma_turtlebot/launch/map_th462a460a459.pgm
+image: /home/odroid/catkin_ws/src/usma_turtlebot/maps/map_th462a460a459.pgm
 resolution: 0.050000
 origin: [-12.200000, -12.200000, 0.000000]
 negate: 0
