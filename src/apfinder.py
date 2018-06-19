@@ -29,7 +29,7 @@ if __name__ == "__main__":
     rate = rospy.Rate(10) # 10hz
     while not rospy.is_shutdown():
         msg = check_connected_ap()
-        if (joy_data.buttons[1]==1:
+        if (len(joy_data.buttons) > 2 and joy_data.buttons[1]==1):
             msg = msg + ",trouble"
         print(msg)        
         pub.publish(msg)
