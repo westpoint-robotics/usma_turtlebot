@@ -1,101 +1,33 @@
-# Turtlebot Demo Instructions
-Each computer is labeled with its name, such as ROS03 or ROS12. Each robot uses two computers, one acts as the Turtlebot computer and the other is the Control Station/User Interface. The computers are currently configured as pairs to work together. Below is a table identifying the pairs and their roles.
+# Turtlebot Demo Instructions - Odroid
+Each Turtlebot is controlled by an Odroid single board computer. When the Turtlebot is turned on, the Odroid is also powered on and then automatically boots up, loads the operating system, and connects to the EECSDS3 network. It may take a minute or two for the Odroid to fully boot and connect to the network. When the Odroid is working properly you will see a steady red light and blinking blue light.
 
-| Pair | Control Station |  Turtlebot  |
-| :---: | :---: | :---: |
-|  1   |      ROS02     |    ROS03    |
-|  2   |      ROS04     |    ROS07    |
-|  3   |      ROS12     |    ROS11    |
+Every Odroid has a single map that covers TH462, TH460 and TH459. When launching the IT105_demo this map is used by default. Other maps can be created and used see below for those instructions.
+
+Each Odroid has a label on it to help identify it. Also it's environment is setup to work with a designated laptop and to start in a designated room. See the below table to match the Odroid to Laptop and room.
+
+| Pair | Odroid Label |  Turtlebot  |  Laptop Contoller |  Start Room   |
+| :---: | :---: | :---: | :---: | :---: |
+|  1   |      T02     |    Turtl02    |    ROS303   |    TH462   |
+|  2   |      T03     |    Turtl03    |    ROS308   |    TH460   |
 
 ## Navigate a known map:
 Reference: http://wiki.ros.org/turtlebot_navigation/Tutorials/Autonomously%20navigate%20in%20a%20known%20map
 
-The below environmental variable is set in .bashrc. This is how the node knows what map to load.
+1. If the robot is not turned on, then turn it on.
 
-`export TURTLEBOT_MAP_1FILE=~/catkin_ws/src/usma_turtlebot/maps/my_map.yaml`
+2. Place the robot in the center of the aisle, aligned with the front row of desks, and facing the front of the room. This is the location the robot expects to be in once it starts. 
 
-This an example of using a different map.
+3. On the desktop of the ROS Laptop, click on the red turtle icon labeled "Turtle Navigating". This opens a terminal, connects to the Odroid using SSH, and starts the navigation code on the Odriod, 
 
-`export TURTLEBOT_MAP_FILE=~/catkin_ws/src/usma_turtlebot/maps/th1138_map.yaml`
+4. Open a terminal on the ROS Laptop and enter the command:
+`roslaunch usma_turtlebot it105_visual.launch`
 
-1. Turn on the Turtlebot computer, it will automatically login and once you see the desktop environment, shut the lid and put it ontop of the Turtlebot. Attach the two USB cables, it is better if the USB ports are facing the rear, they are less likely to get caught on something. Use the velcro to hold the computer on the Turtlebot. 
+5. After a delay, you should see the map appear on laptop display. If the robot is not at the correct location on the map, you adjust this by clicking on the "2d Pose Estimate" button on the top menu bar, then clicking on the estimated location of the robot on the map. Before letting up on the mouse button make sure the arrow is pointing in the same orientation as the robot.
 
-2. Turn on the ControlStation computer, connect it to the classroom projector and mirror the screen. All the 
-following instructions are implemented on the ControlStation Computer.
+6. Click on the 2D Nav Goal button on the top menu bar then click on a desired destination on the map. The robot will then navigate to this location.
 
-3. Open a terminal and run the below commands:
-
-    `ssh user1@<IP ADDRESS FOR TURTLEBOT COMPUTER>`
-
-    `roslaunch usma_turtlebot it105_remote_demo.launch`
-
-    IGNORE ANY ERRORS THAT BEGIN LIKE:
-
-    - [ERROR] [1521683230.121319787]: Kobuki : malformed sub-payload detected.
-
-    IGNORE ANY WARNINGS. They will mostly begin like this.
-
-    - [ WARN] [1521683228.097645086] 
-
-4. Open a another terminal and run this command:
-`roslaunch usma_turtlebot it105_remote_visual.launch` 
-
-5. Using RVIZ choose "2d Pose Estimate" by left clicking on it. Then left click on the map
-in the approximate position and orientation of the robot. The closer to reality you are
-the quicker the robot is going to develop an accurate estimate of its position.
-
-6. You can drive the robot around with the joystick to help it localize better.
-
-7. Left click on "2d Nav Goal" in RVIZ and pick a spot and orientation on the map by
-left clicking on the map. I recommend picking something easy first. Then make it more
-challenging.
-
-8. You can demonstrate obstacle avoidance by having a student stand in the way of the robot. The
-robot will develop a plan and move around the obstacle if possible.
-
-## To create a new map:
-Reference: http://wiki.ros.org/turtlebot_navigation/Tutorials/Build%20a%20map%20with%20SLAM
-
-1. Turn on the Turtlebot computer, it will automatically login and once you see the desktop environment, shut the lid and put it ontop of the Turtlebot. Attach the two USB cables, it is better if the USB ports are facing the rear, they are less likely to get caught on something. Use the velcro to hold the computer on the Turtlebot. 
-
-2. Turn on the ControlStation computer. All the following instructions are implemented on the ControlStation Computer.
+7. When the robot looses network access as is switches to another access point, it may cause a lag or for RViz to loose synchronization. If this does not resolve itself, you can close RViz then select the terminal and press Ctrl-C. Up arrow and run the last command again.
 
 
-3. Open a terminal and run the below commands:
-
-    `ssh user1@<IP ADDRESS FOR TURTLEBOT COMPUTER>`
-
-    `roslaunch usma_turtlebot it105_remote_mapping.launch`
-
-    IGNORE ANY ERRORS THAT BEGIN LIKE:
-
-    - [ERROR] [1521683230.121319787]: Kobuki : malformed sub-payload detected.
-
-    IGNORE ANY WARNINGS. They will mostly begin like this.
-
-    - [ WARN] [1521683228.097645086] 
-
-4. Open a another terminal and run this command:
-`roslaunch usma_turtlebot it105_remote_visual.launch`
-
-5. Drive the robot around with the joystick watching how the map develops. A few tips:
-    - Pivoting in place should be limited and slow. Better is a slow turn with forward
-        drive.
-    - Drive slower when the robot is mapping new area. You can go faster when the robot
-        is driving over mapped areas.
-    - You should drive loops. Drive out to the hallway and back to the corner more than
-        once. This should enable the robot to accurately map the room. The room should
-        be square, the walls continuous. 
-        
-7. When you are satisfied with the map you must save it before exiting out of the applications. 
-To save the map you need to establish a another ssh shell to the Turtlebot and send the save command as
-shown below. 
-    - Open ANOTHER TERMINAL (3rd terminal) and run the following commands:
-
-        `ssh user1@<IP ADDRESS FOR TURTLEBOT COMPUTER>`
-
-        `rosrun map_server map_saver -f ~/catkin_ws/src/usma_turtlebot/maps/my_map`
-    - You can change the map name, for example instead of calling it my_map, call it TH461_map. If you do this you need to change the environmental variable shown at the top of these instructions to reflect the new map.
-    - Renaming the map is recommended. This code is a GIT repo and if your not careful it is possible to overwright your map with the one on Github.
 
 
