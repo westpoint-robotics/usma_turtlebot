@@ -27,6 +27,6 @@
     <remap from="turtlebot_teleop_joystick/cmd_vel" to="teleop_velocity_smoother/raw_cmd_vel"/>
   </node>
 
-  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find usma_turtlebot)/config/it105_turtlebot.rviz"/> 
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find usma_turtlebot)/config/it105_turtlebot.rviz"/>
 
 </launch>

@@ -118,11 +118,6 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        mount_asus_xtion_pro_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
         plate_bottom_link:
           Alpha: 1
           Show Axes: false
@@ -524,11 +519,11 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.00999999978
-      Scale: 45.5137825
+      Scale: 137.327637
       Target Frame: base_footprint
       Value: TopDownOrtho (rviz)
-      X: -2.78228378
-      Y: -0.57914561
+      X: -0.799567282
+      Y: -0.115350157
     Saved: ~
 Window Geometry:
   Displays:
