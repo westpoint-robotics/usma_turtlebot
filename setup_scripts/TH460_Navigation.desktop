@@ -4,8 +4,8 @@ Version=1.0
 Type=Application
 Terminal=false
 Icon[en_US]=/opt/ros/kinetic/share/turtlesim/images/kinetic.png
-Name[en_US]=Turtle Navigating
+Name[en_US]=TH460 Navigation
 Name=Turtle Navigating
 Icon=/opt/ros/kinetic/share/turtlesim/images/kinetic.png
-Exec=terminator -x sshpass -p "odroid" ssh -t -o StrictHostKeyChecking=no odroid@192.168.200.44 'bash -ic "roslaunch usma_turtlebot it105_demo.launch" '
+Exec=terminator -x sshpass -p "odroid" ssh -t -o StrictHostKeyChecking=no odroid@192.168.200.43 'bash -ic "roslaunch usma_turtlebot th460_it105demo.launch" '
 
