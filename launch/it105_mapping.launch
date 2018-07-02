@@ -15,6 +15,6 @@
 <!-- To save the map:
 rosrun map_server map_saver -f ~/catkin_ws/src/usma_turtlebot/launch/my_map
 
-rosrun map_server map_saver -f ~/catkin_ws/src/usma_turtlebot/launch/map_th462
+rosrun map_server map_saver -f ~/catkin_ws/src/usma_turtlebot/maps/map_th175v3
  -->
 </launch>
