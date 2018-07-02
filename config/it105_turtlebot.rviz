@@ -9,7 +9,6 @@ Panels:
         - /Global Map1/Planner1
         - /Local Map1
         - /Local Map1/Planner1
-        - /Local Map1/Trajectory Cloud1
       Splitter Ratio: 0.5
     Tree Height: 453
   - Class: rviz/Selection
@@ -118,6 +117,11 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
+        mount_asus_xtion_pro_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
         plate_bottom_link:
           Alpha: 1
           Show Axes: false
@@ -427,12 +431,12 @@ Visualization Manager:
           Color: 255; 255; 255
           Color Transformer: Intensity
           Decay Time: 0
-          Enabled: true
+          Enabled: false
           Invert Rainbow: false
           Max Color: 255; 255; 255
-          Max Intensity: 8.39999962
+          Max Intensity: 3857.30005
           Min Color: 0; 0; 0
-          Min Intensity: 1.85000002
+          Min Intensity: 0
           Name: Trajectory Cloud
           Position Transformer: XYZ
           Queue Size: 10
@@ -444,7 +448,7 @@ Visualization Manager:
           Unreliable: false
           Use Fixed Frame: true
           Use rainbow: false
-          Value: true
+          Value: false
       Enabled: true
       Name: Local Map
     - Alpha: 1
@@ -509,7 +513,7 @@ Visualization Manager:
   Value: true
   Views:
     Current:
-      Angle: -6.40003014
+      Angle: -6.37502956
       Class: rviz/TopDownOrtho
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.0599999987
@@ -519,11 +523,11 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.00999999978
-      Scale: 137.327637
+      Scale: 44.0191727
       Target Frame: base_footprint
       Value: TopDownOrtho (rviz)
-      X: -0.799567282
-      Y: -0.115350157
+      X: -1.27620983
+      Y: -0.724711239
     Saved: ~
 Window Geometry:
   Displays:
