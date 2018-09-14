@@ -1,3 +1,9 @@
+# Turtlebot Aspire E11 Joystick Instructions
+In a terminal run the command:
+`ls /dev/input | grep js`
+If this shows both js0 and js1 then you need make the ROS nodes use the js1 joystick. You can set the parameter and start the node in one line with:
+`ros set param /joystick/dev "/dev/input/js1"`
+
 # Turtlebot Demo Instructions - Odroid
 Each Turtlebot is controlled by an Odroid single board computer. When the Turtlebot is turned on, the Odroid is also powered on and then automatically boots up, loads the operating system, and connects to the EECSDS3 network. It may take a minute or two for the Odroid to fully boot and connect to the network. When the Odroid is working properly you will see a steady red light and blinking blue light.
 
