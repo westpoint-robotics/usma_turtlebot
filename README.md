@@ -5,7 +5,7 @@ In a terminal run the command:
 
 If this shows both js0 and js1 then you need make the ROS nodes use the js1 joystick. You can set the parameter and start the node in one line with:
 
-`rosparam set /joystick/dev "/dev/input/js1"`
+`rosparam set /joystick/dev "/dev/input/js1";roslaunch turtlebot_teleop xbox360_teleop.launch`
 
 
 # Turtlebot Demo Instructions - Odroid
