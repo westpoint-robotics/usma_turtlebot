@@ -1,6 +1,5 @@
 #!/bin/bash
-# IT105 Turtlebot Demo setup script
-# This script relies on it105_local.sh to do some of the work.
+# IT105 Turtlebot Demo setup script to send the shutdown command to all turtlebots if you put their IP address in the list.
 
 # Create an array of servers to configure
 declare -a comps=("192.168.200.60" "192.168.200.123" "192.168.200.117" "192.168.200.105" "192.168.200.202" "192.168.200.55")
