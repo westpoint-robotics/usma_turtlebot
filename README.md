@@ -4,7 +4,7 @@ These instructions are based on the [Robotis e-Manual](https://emanual.robotis.c
 
 Assuming the TB3 (waffel_pi version) contains a RPi3B+, OpenCR board, LDS-01 LIDAR, and an image running Ubuntu 20.04 with ROS Noetic based on these [instructions](https://emanual.robotis.com/docs/en/platform/turtlebot3/sbc_setup/#sbc-setup). If there is no image, see your instructor.
 
-1. From a WREN Linux computer (Ubuntu 20.04), ssh into the TB3 using the IP address found on the lower waffel. Password is `turtlebot`.
+1. From a WREN Linux computer (Ubuntu 20.04), ssh into the TB3 using the IP address found on the lower waffel. Username is `ubuntu` and password is `turtlebot`.
 
 `ssh ubuntu@10.X.X.X`
 
