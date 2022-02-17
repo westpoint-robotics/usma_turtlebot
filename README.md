@@ -12,23 +12,18 @@ Assuming the TB3 (waffel_pi version) contains a RPi3B+, OpenCR board, LDS-01 LID
 
 `nano .bashrc`
 
+3.Check that your .bashrc has these settings:
 
-source /opt/ros/noetic/setup.bash
+`source /opt/ros/noetic/setup.bash
 source ~/catkin_ws/devel/setup.bash
 
-# Replace IP_ADDRESS_OF_REMOTE_PC with the IP address of remote PC.
-# Bothe Remote PC and Raspberry Pi should be connected in the same local network
-# e.g) export ROS_MASTER_URI=http://192.168.0.10:11311
-export ROS_MASTER_URI=http://10.2.20.43:11311
-
-# Replace IP_ADDRESS_OF_RASPBERRY_PI with the IP address of Raspberry Pi
-# e.g) export ROS_HOSTNAME=192.168.0.11
-export ROS_HOSTNAME=10.212.193.138
+export ROS_MASTER_URI=http://10.X.X.X:11311 # Remote PC
+export ROS_HOSTNAME=10.X.X.X                # RPI3
 
 export LDS_MODEL=LDS-01
 export OPENCR_PORT=/dev/ttyACM0
 export OPENCR_MODEL=waffle_noetic
-export TURTLEBOT3_MODEL=waffle_pi
+export TURTLEBOT3_MODEL=waffle_pi`
 
 
 
