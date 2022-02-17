@@ -1,6 +1,36 @@
-# Turtlebot3 Setup
+# TurtleBot3 Setup
 
-These instructions are based on the [Robotis e-Manual](https://emanual.robotis.com/docs/en/platform/turtlebot3/overview/) for the Turtlebot3.
+These instructions are based on the [Robotis e-Manual](https://emanual.robotis.com/docs/en/platform/turtlebot3/overview/) for the Turtlebot3.  
+
+Assuming the TB3 (waffel_pi version) contains a RPi3B+, OpenCR board, LDS-01 LIDAR, and an image running Ubuntu 20.04 with ROS Noetic based on these [instructions](https://emanual.robotis.com/docs/en/platform/turtlebot3/sbc_setup/#sbc-setup). If there is no image, see your instructor.
+
+1. From a WREN Linux computer (Ubuntu 20.04), ssh into the TB3 using the IP address found on the lower waffel. Password is Turtlebot.
+
+`ssh ubuntu@10.X.X.X`
+
+2. Open the .bashrc
+
+`nano .bashrc`
+
+
+source /opt/ros/noetic/setup.bash
+source ~/catkin_ws/devel/setup.bash
+
+# Replace IP_ADDRESS_OF_REMOTE_PC with the IP address of remote PC.
+# Bothe Remote PC and Raspberry Pi should be connected in the same local network
+# e.g) export ROS_MASTER_URI=http://192.168.0.10:11311
+export ROS_MASTER_URI=http://10.2.20.43:11311
+
+# Replace IP_ADDRESS_OF_RASPBERRY_PI with the IP address of Raspberry Pi
+# e.g) export ROS_HOSTNAME=192.168.0.11
+export ROS_HOSTNAME=10.212.193.138
+
+export LDS_MODEL=LDS-01
+export OPENCR_PORT=/dev/ttyACM0
+export OPENCR_MODEL=waffle_noetic
+export TURTLEBOT3_MODEL=waffle_pi
+
+
 
 In a terminal run the command:
 
