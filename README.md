@@ -1,4 +1,7 @@
-# Turtlebot Aspire E11 Joystick Instructions
+# Turtlebot3 Setup
+
+These instructions are based on the Robotis e-Manual [https://emanual.robotis.com/docs/en/platform/turtlebot3/overview/] for the Turtlebot3.
+
 In a terminal run the command:
 
 `ls /dev/input | grep js`
