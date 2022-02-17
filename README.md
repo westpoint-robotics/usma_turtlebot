@@ -64,3 +64,13 @@ Both the Remote PC (Desktop) and TB3 should be properly configured to communicat
 
 Follow the [bringup instructions](https://emanual.robotis.com/docs/en/platform/turtlebot3/bringup/#bringup) to start both the Remote PC and TB3. 
 
+If you get error messages on the RPi, re-load the firmware to the OpenCR board based on these [instructions](https://emanual.robotis.com/docs/en/platform/turtlebot3/opencr_setup/#opencr-setup).
+
+`ssh ubuntu@10.X.X.X`
+
+`cd ./opencr_update`
+
+`./update.sh $OPENCR_PORT $OPENCR_MODEL.opencr`
+
+
+
