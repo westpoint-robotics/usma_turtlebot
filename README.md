@@ -52,15 +52,15 @@ Assuming the TB3 (waffel_pi version) contains a RPi3B+, OpenCR board, LDS-01 LID
 
 `export TURTLEBOT3_MODEL=waffle_pi`
 
-8. Re-source the .bashrc.
+8. Save and re-source the .bashrc.
 
 `source .bashrc`
 
-9. All of the previous commands are based on the [Quick Start Guide](https://emanual.robotis.com/docs/en/platform/turtlebot3/quick-start/). Click the Noetic Tab.
+9. All of the previous commands are based on the [Quick Start Guide](https://emanual.robotis.com/docs/en/platform/turtlebot3/quick-start/). Always click the tab for the ROS Version (i.e. Noetic).  
 
 # TurtleBot3 Bringup
 
-Both the Remote PC (Desktop) and TB3 should be properly configured to communicate on the same ROS network over the WREN.
+Both the Remote PC (desktop or laptop) and TB3 (RPi) should be properly configured to communicate on the same ROS network over the WREN.
 
 Follow the [bringup instructions](https://emanual.robotis.com/docs/en/platform/turtlebot3/bringup/#bringup) to start both the Remote PC and TB3. 
 
@@ -72,5 +72,6 @@ If you get error messages on the RPi, re-load the firmware to the OpenCR board b
 
 `./update.sh $OPENCR_PORT $OPENCR_MODEL.opencr`
 
+# TurtleBot3 Basic Operation
 
-
+After bringup, perform teleoperation using these [instructions](https://emanual.robotis.com/docs/en/platform/turtlebot3/basic_operation/#basic-operation).
