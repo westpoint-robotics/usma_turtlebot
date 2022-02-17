@@ -1,6 +1,6 @@
 # TurtleBot3 Setup
 
-These instructions are based on the [Robotis e-Manual](https://emanual.robotis.com/docs/en/platform/turtlebot3/overview/) for the Turtlebot3. Read the [Quick Start Guide](https://emanual.robotis.com/docs/en/platform/turtlebot3/quick-start/) to gain an overall understanding on the process. Always click the tab for the ROS Version (i.e. Noetic).  
+These instructions are based on the [Robotis e-Manual](https://emanual.robotis.com/docs/en/platform/turtlebot3/overview/) for the Turtlebot3. Read the [Quick Start Guide](https://emanual.robotis.com/docs/en/platform/turtlebot3/quick-start/) to gain an overall understanding of the process. Always click the tab for the ROS Version (i.e. Noetic).  
 
 Assuming the TB3 (waffel_pi version) contains a RPi3B+, OpenCR board, LDS-01 LIDAR, and an image running Ubuntu 20.04 with ROS Noetic based on these [instructions](https://emanual.robotis.com/docs/en/platform/turtlebot3/sbc_setup/#sbc-setup). If there is no image, see your instructor.
 
