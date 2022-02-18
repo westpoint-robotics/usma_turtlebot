@@ -75,3 +75,70 @@ If you get error messages on the RPi, re-load the firmware to the OpenCR board b
 # TurtleBot3 Basic Operation
 
 After bringup, perform teleoperation using these [instructions](https://emanual.robotis.com/docs/en/platform/turtlebot3/basic_operation/#basic-operation).
+
+
+# TurtleBot3 Raspberry Pi Camera Module
+
+In order to run [Raspberry Pi Camera Module](https://www.raspberrypi.com/products/camera-module-v2/), `raspicam_node package` will be used.
+
+1. Access to TB3 via `ssh`
+
+`ssh ubuntu@10.X.X.X # Turtlebot IP`
+
+2. Update `turtlebot3` package
+
+`cd ~/catkin_ws/src/turtlebot3 && git pull`
+
+`rm -r turtlebot3_description/ turtlebot3_teleop/ turtlebot3_navigation/ turtlebot3_slam/ turtlebot3_example/`
+
+`cd ~/catkin_ws && catkin_make`
+
+3. Install libcamera-based stack
+
+`sudo apt install libraspberrypi-bin libraspberrypi-dev`
+
+4. Build `raspicam_node`
+
+`cd ~/catkin_ws/src`
+
+`git clone https://github.com/UbiquityRobotics/raspicam_node.git`
+
+`sudo apt-get install ros-noetic-compressed-image-transport ros-noetic-camera-info-manager ros-noetic-diagnostic-updater`
+
+`cd ~/catkin_ws && catkin_make --only-pkg-with-deps raspicam_node`
+
+5. Enable camera module
+
+`sudo nano /boot/firmware/config.txt`
+
+Add the following lines below `[all]`
+
+```
+start_x=1
+gpu_mem=128
+```
+
+`sudo usermod -a -G video $USER`
+
+`sudo reboot`
+
+6. Testing the camera node
+
+To see if the camera connected,
+
+`vcgencmd get_camera`
+
+If the output is `supported=1 detected=1`, run `raspicam_node` package by following steps
+
+On your PC:
+`roscore`
+
+On the TB3:
+`roslaunch raspicam_node camerav2_1280x960.launch`
+
+On your PC:
+`rqt_image_view`
+
+At the top of the image viewer, select the raspicam_node topic.
+
+
