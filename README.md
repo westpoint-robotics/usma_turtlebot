@@ -89,7 +89,11 @@ In order to run [Raspberry Pi Camera Module](https://www.raspberrypi.com/product
 
 `cd ~/catkin_ws/src/turtlebot3 && git pull`
 
+Remove broken work spaces. If you are using the following folders, do not run the command.
+
 `rm -r turtlebot3_description/ turtlebot3_teleop/ turtlebot3_navigation/ turtlebot3_slam/ turtlebot3_example/`
+
+Build.
 
 `cd ~/catkin_ws && catkin_make`
 
